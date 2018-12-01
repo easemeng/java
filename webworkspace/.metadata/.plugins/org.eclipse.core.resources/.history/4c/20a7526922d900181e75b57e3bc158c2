@@ -1,0 +1,31 @@
+package com.igeek.shop.dao;
+
+import java.sql.SQLException;
+
+import org.apache.commons.dbutils.QueryRunner;
+
+import com.igeek.common.utils.DataSourceUtils;
+import com.igeek.shop.entity.User;
+
+public class RigestDao {
+	
+	public static int rigest(User user){
+		
+		QueryRunner qr = new QueryRunner(DataSourceUtils.getDataSource());
+		
+		String sql = "insert into user values(?,?,?,?,?,?,?,?,?,?)";
+		
+		int row = 0;
+		try {
+			row = qr.update(sql,user.getUid(),user.getUsername(),user.getPassword(),
+					user.getName(),user.getEmail(),user.getTelephone(),user.getBirthday(),
+					user.getSex(),user.getState(),user.getCode());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return row;
+		
+	}
+
+}

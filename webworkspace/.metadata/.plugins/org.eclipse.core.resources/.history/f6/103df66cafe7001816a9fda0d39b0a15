@@ -1,0 +1,5 @@
+package com.igeek.singleton;
+
+public enum Singleton5 {
+
+}

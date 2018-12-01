@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Web03</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>name</param-name>
+		<param-value>全局变量初始化参数 所有的servlet对象都可以访问</param-value>
+	</context-param>
+	<context-param>
+		<param-name>age</param-name>
+		<param-value>20</param-value>
+	</context-param>
+	<servlet>
+		<description></description>
+		<display-name>LoginServlet</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.igeek.login.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>RegisterServlet</display-name>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>com.igeek.login.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/RegisterServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>TestServlet</display-name>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.igeek.login.TestServlet</servlet-class>
+		<!-- 初始化参数必须写到 load-on-startup 前面 -->
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>ttt</param-value>
+		</init-param>
+		<init-param>
+			<param-name>age</param-name>
+			<param-value>20</param-value>
+		</init-param>
+		<!-- load-on-startup 
+				可以指定Servlet被创建的时机 
+				若为负数 则在第一次请求时创建 
+				若为0或正数 则在当前Web应用被Servlet容器加载时创建实例 且数字越小越早创建 
+		-->
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<!-- 
+			在Servlet映射到的URL中也可以使用 * 通配符	但是只能有两种固定格式
+				一种格式是"*.扩展名"
+				另一种格式是以正斜杠(/)开头并以"/*"结尾
+			/test /xxx.action	没有问题	即带 / 又带扩展名的不合法。 例如 /*.action
+												IllegalArgumentException 异常
+		 -->
+		<url-pattern>/TestServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

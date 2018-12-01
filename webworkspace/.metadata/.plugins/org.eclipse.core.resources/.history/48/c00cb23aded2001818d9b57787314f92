@@ -1,0 +1,29 @@
+package com.igeek.web;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.igeek.service.LoginService;
+
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	private LoginService loginservice = new LoginService();
+	// servlet 负责接收(从前台页面接收)传递(把数据传递给前台 其实是放到4个域对象中)数据
+	
+    public LoginServlet() {
+        
+    }
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

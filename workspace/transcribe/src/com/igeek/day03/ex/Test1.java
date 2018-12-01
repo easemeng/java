@@ -1,0 +1,262 @@
+package com.igeek.day03.ex;
+
+import java.util.Scanner;
+
+public class Test1 {
+	//从键盘分别输入年、月、日，判断这一天是当年的第几天
+	public static void main(String[] args) {
+		
+		//
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入年:");
+		int year = sc.nextInt();
+		System.out.println("请输入月:");
+		int month = sc.nextInt();
+		System.out.println("请输入日:");
+		int day = sc.nextInt();
+		
+		//复杂问题简单化  。    1 3 5 7 8 10 12  31       4 6 9 11  30    2 28
+		//
+		int sum = 0; //用来表示一年中的第几天。
+		//校验 你输入的内容是否合法 。  day  50
+		switch (month) {
+		case 12://11
+			sum+=30;
+		case 11://10
+			sum+=31;
+		case 10:
+			sum+=30;
+		case 9:
+			sum+=31;
+		case 8:
+			sum+=31;
+		case 7:
+			sum+=30;
+		case 6:
+			sum+=31;
+		case 5:
+			sum+=30;
+		case 4:
+			sum+=31;
+		case 3://这个位置最特殊 表示的是二月份 。平年。润年不一样。
+			//sum+=28;//28  59   60
+			if(year%4==0&&year%100!=0 || year%400==0){
+				sum+=29;
+			}else{
+				sum+=28;
+			}
+		case 2:// 2
+			sum+=31;//sum = 31  1 月整天数。
+		case 1:
+			//等价于 sum = sum + day ;
+			sum+=day;
+		}
+		
+		System.out.println(year+"年"+month+"月"+day+"日:是一年中的第"+sum+"天。");
+		
+		
+		
+		
+		//从键盘分别输入年、月、日，判断这一天是当年的第几天
+		Scanner sc2 = new Scanner(System.in);
+		System.out.println("请输入年:");
+		int year2 = sc2.nextInt();
+		System.out.println("请输入月:");
+		int month2 = sc2.nextInt();
+		System.out.println("请输入日:");
+		int day2 = sc2.nextInt();
+		
+		//复杂问题简单化  。    1 3 5 7 8 10 12  31       4 6 9 11  30    2 28
+		//
+		int sum2 = 0; //用来表示一年中的第几天。
+		//校验 你输入的内容是否合法 。  day  50
+		switch (month2) {
+		case 12://11
+			sum2+=30;
+		case 11://10
+			sum2+=31;
+		case 10:
+			sum2+=30;
+		case 9:
+			sum2+=31;
+		case 8:
+			sum2+=31;
+		case 7:
+			sum2+=30;
+		case 6:
+			sum2+=31;
+		case 5:
+			sum2+=30;
+		case 4:
+			sum2+=31;
+		case 3://这个位置最特殊 表示的是二月份 。平年。润年不一样。
+			//sum+=28;//28  59   60
+			if(year2%4==0&&year2%100!=0 || year2%400==0){
+				sum2+=29;
+			}else{
+				sum2+=28;
+			}
+		case 2:// 2
+			sum2+=31;//sum = 31  1 月整天数。
+		case 1:
+			//等价于 sum = sum + day ;
+			sum2+=day2;
+		}
+		
+		System.out.println(year2+"年"+month2+"月"+day2+"日:是一年中的第"+sum2+"天。");
+		
+		
+		
+		
+		//从键盘分别输入年、月、日，判断这一天是当年的第几天
+		Scanner sc3 = new Scanner(System.in);
+		System.out.println("请输入年:");
+		int year3 = sc3.nextInt();
+		System.out.println("请输入月:");
+		int month3 = sc3.nextInt();
+		System.out.println("请输入日:");
+		int day3 = sc3.nextInt();
+		
+		//复杂问题简单化  。    1 3 5 7 8 10 12  31       4 6 9 11  30    2 28
+		//
+		int sum3 = 0; //用来表示一年中的第几天。
+		//校验 你输入的内容是否合法 。  day  50
+		switch (month3) {
+		case 12://11
+			sum3+=30;
+		case 11://10
+			sum3+=31;
+		case 10:
+			sum3+=30;
+		case 9:
+			sum3+=31;
+		case 8:
+			sum3+=31;
+		case 7:
+			sum3+=30;
+		case 6:
+			sum3+=31;
+		case 5:
+			sum3+=30;
+		case 4:
+			sum3+=31;
+		case 3://这个位置最特殊 表示的是二月份 。平年。润年不一样。
+			//sum+=28;//28  59   60
+			if(year3%4==0&&year3%100!=0 || year3%400==0){
+				sum3+=29;
+			}else{
+				sum3+=28;
+			}
+		case 2:// 2
+			sum3+=31;//sum = 31  1 月整天数。
+		case 1:
+			//等价于 sum = sum + day ;
+			sum3+=day3;
+		}
+		
+		System.out.println(year3+"年"+month3+"月"+day3+"日:是一年中的第"+sum3+"天。");
+		
+		
+		
+		
+		//从键盘分别输入年、月、日，判断这一天是当年的第几天
+		Scanner sc4 = new Scanner(System.in);
+		System.out.println("请输入年:");
+		int year4 = sc4.nextInt();
+		System.out.println("请输入月:");
+		int month4 = sc4.nextInt();
+		System.out.println("请输入日:");
+		int day4 = sc4.nextInt();
+		
+		//复杂问题简单化  。    1 3 5 7 8 10 12  31       4 6 9 11  30    2 28
+		//
+		int sum4 = 0; //用来表示一年中的第几天。
+		//校验 你输入的内容是否合法 。  day  50
+		switch (month4) {
+		case 12://11
+			sum4+=30;
+		case 11://10
+			sum4+=31;
+		case 10:
+			sum4+=30;
+		case 9:
+			sum4+=31;
+		case 8:
+			sum4+=31;
+		case 7:
+			sum4+=30;
+		case 6:
+			sum4+=31;
+		case 5:
+			sum4+=30;
+		case 4:
+			sum4+=31;
+		case 3://这个位置最特殊 表示的是二月份 。平年。润年不一样。
+			//sum+=28;//28  59   60
+			if(year4%4==0&&year4%100!=0 || year4%400==0){
+				sum4+=29;
+			}else{
+				sum4+=28;
+			}
+		case 2:// 2
+			sum4+=31;//sum = 31  1 月整天数。
+		case 1:
+			//等价于 sum = sum + day ;
+			sum4+=day4;
+		}
+		
+		System.out.println(year4+"年"+month4+"月"+day4+"日:是一年中的第"+sum4+"天。");
+		
+		
+		
+		
+		//从键盘分别输入年、月、日，判断这一天是当年的第几天
+		Scanner sc5 = new Scanner(System.in);
+		System.out.println("请输入年:");
+		int year5 = sc5.nextInt();
+		System.out.println("请输入月:");
+		int month5 = sc5.nextInt();
+		System.out.println("请输入日:");
+		int day5 = sc5.nextInt();
+		
+		//复杂问题简单化  。    1 3 5 7 8 10 12  31       4 6 9 11  30    2 28
+		//
+		int sum5 = 0; //用来表示一年中的第几天。
+		//校验 你输入的内容是否合法 。  day  50
+		switch (month5) {
+		case 12://11
+			sum5+=30;
+		case 11://10
+			sum5+=31;
+		case 10:
+			sum5+=30;
+		case 9:
+			sum5+=31;
+		case 8:
+			sum5+=31;
+		case 7:
+			sum5+=30;
+		case 6:
+			sum5+=31;
+		case 5:
+			sum5+=30;
+		case 4:
+			sum5+=31;
+		case 3://这个位置最特殊 表示的是二月份 。平年。润年不一样。
+			//sum+=28;//28  59   60
+			if(year5%4==0&&year5%100!=0 || year5%400==0){
+				sum5+=29;
+			}else{
+				sum5+=28;
+			}
+		case 2:// 2
+			sum5+=31;//sum = 31  1 月整天数。
+		case 1:
+			//等价于 sum = sum + day ;
+			sum5+=day5;
+		}
+		
+		System.out.println(year5+"年"+month5+"月"+day5+"日:是一年中的第"+sum5+"天。");
+	}
+
+}

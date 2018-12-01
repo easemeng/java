@@ -1,0 +1,40 @@
+package com.igeek.enumtest;
+
+import org.junit.Test;
+
+public class TestMain {
+	
+	@Test
+	public void test1(){
+		
+		PersonSex man = PersonSex.MAN;
+		System.out.println(man);
+		man.behavior();
+		System.out.println(man.getSex());
+		
+	}
+	
+	@Test
+	public void test2(){
+		
+		PersonSex2 man = PersonSex2.MAN;
+		System.out.println(man);
+		man.behavior();
+		System.out.println(man.getSex());
+		
+		System.out.println("---------------------------------------\n");
+		
+		/*PersonSex2[] personSex2 = PersonSex2.values();
+		for (int i = 0; i < personSex2.length; i++) {
+			System.out.println(personSex2[i]);
+		}*/
+		
+		System.out.println("---------------------------------------\n");
+		
+		/*String str = "WOMAN";
+		PersonSex2 strs = PersonSex2.valueOf(str);
+		System.out.println(strs);*/
+		
+	}
+
+}

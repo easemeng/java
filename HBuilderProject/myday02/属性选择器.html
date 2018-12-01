@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 *  为所有具有title属性的p元素 设置一个背景颜色为黄色
+			 * 属性选择器
+			 * 		- 作用：可以根据元素中的属性或属性值来选取指定元素
+			 * 		- 语法：
+			 * 				[属性名]					选取含有指定属性的元素
+			 * 				[属性名="属性值"]		选取含有指定属性值的元素
+			 * 				[属性名^="属性值"]	选取属性值以指定内容开头的元素
+			 * 				[属性名$="属性值"]	选取属性值以指定内容结尾的元素
+			 * 				[属性名*="属性值"]	选取属性值包含有指定内容的元素
+			 */
+			p[title]{
+				color: #00FFFF;
+			}
+			p[title*="e"]{
+				color: #8A2BE2;
+			}
+		</style>
+	</head>
+	<body>
+		<p title="q">段落1</p>
+		<p title="w">段落2</p>
+		<p>段落3</p>
+		<p title="e">段落4</p>
+		<p title="r">段落5</p>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 没有任何约束 。 你想怎么写就怎么写 -->
+<beans>
+	<!-- 可以用XML语言描述java中的类对象 -->
+	<!-- 什么叫元素		元素又叫标签又叫标记	beans  bean  property  统统都是元素 -->
+	
+	<!-- 标签都是已 <> 尖括号  开始    <mm> 开始标签   开始元素  </mm> 结束标签  结束元素  结束标记-->
+	
+	<!-- 语法要求   不允许交叉嵌套 -->
+	<!-- 注释
+	
+		注释
+		<a>
+		<b></b>
+		<a>
+		<a>...</a>
+		
+		注释
+	
+	 -->
+	 
+	 
+	 <!-- 称为空元素
+	 <mymy id="01" name="..." age="18" color="red" />
+	  -->
+	  
+	  
+	  <!-- 
+	  		属性名称 = 属性值    一般值可以用双引号或者单引号包裹
+	  		属性名称不能包含  ; 空格	只能以字母开头
+	  		<a id="01" name="..." age="18" color="red"></a>
+	   -->
+	   
+	   
+	   <bean id="bean1" classPath="com.igeek.bean.User">
+	   		<!-- 元素体	元素体可以是元素   也可以是文本 -->
+	   		<property name="uid" value="u001"></property>
+	   		<property name="userName" value="逸"></property>
+	   		<property name="password" value="Yi99"></property>
+	   </bean>
+	   <bean id="bean2" classPath="com.igeek.bean.User">
+	   		<property name="uid" value="u002"></property>
+	   		<property name="userName" value="梦"></property>
+	   		<property name="password" value="Meng99"></property>
+	   </bean>
+</beans>

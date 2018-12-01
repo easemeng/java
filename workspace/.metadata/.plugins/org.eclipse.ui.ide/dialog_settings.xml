@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\workspace\transcribe"/>
+			<item value="E:\workspace\threeday05"/>
+			<item value="E:\workspace\threeday04"/>
+			<item value="E:\workspace\threeday03"/>
+			<item value="E:\workspace\threeday02"/>
+			<item value="E:\workspace\thehomeworkof10day"/>
+			<item value="E:\workspace\myday05"/>
+			<item value="E:\workspace\myday04"/>
+			<item value="E:\workspace\myday03"/>
+			<item value="E:\workspace\myday02"/>
+			<item value="E:\workspace\myday01"/>
+			<item value="E:\workspace\io"/>
+			<item value="E:\workspace\fourday04"/>
+			<item value="E:\workspace\fourday03"/>
+			<item value="E:\workspace\fourday003"/>
+			<item value="E:\workspace\fourday02"/>
+			<item value="E:\workspace\fourday01"/>
+			<item value="E:\workspace\fiveday01"/>
+			<item value="E:\workspace\threeday01"/>
+			<item value="E:\workspace\twoday05"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

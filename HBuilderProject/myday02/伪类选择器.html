@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类选择器</title>
+		<style type="text/css">
+			/*
+			 * 		link 	指的就是超链接的原始状态
+			 * 		hover 	指的就是当鼠标移动过来的状态
+			 * 		action 	指当鼠标点击不松开时候  就是激活状态
+			 * 		visited 	访问过的
+			 */
+			a:link{
+				color: aqua;
+			}
+			a:hover{
+				color: blueviolet;
+			}
+			a:active{
+				color: blue;
+			}
+			a:visited{
+				color: darkgray;
+			}
+			
+			/* 当鼠标选中的时候  表示获得鼠标的焦点 */
+			input:focus{
+				background-color:deepskyblue;
+			}
+			
+			/* -moz- 兼容火狐浏览器 */
+			p::-moz-selection{
+				background-color: dimgrey;
+			}
+			
+			/* 伪对象选择器，作用是给选中的内容添加特效 */
+			P::selection{
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.baidu.com">百度</a>
+		<a href="http://www.zhanqitv.com">战旗TV</a>
+		
+		<p>一纸信笺落了尘，将谁的往事尘封</p>
+		
+		<input type="text" maxlength="10" placeholder="输入..." />
+	</body>
+</html>

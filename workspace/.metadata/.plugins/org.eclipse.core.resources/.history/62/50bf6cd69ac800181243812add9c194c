@@ -1,0 +1,31 @@
+package com.igeek.day05.student;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class IOTest6 {
+
+	public static void main(String[] args) throws Exception {
+		//FileReader 字符输入流对象 FileWriter字符输出流对象   只能读取文档类型 。txt .docx
+		
+		//FileInputStream 字节流输入对象  FileOutputStream 字节流输出对象 。 注意 这个什么都能读。
+		//  010010101011   .avi   gaojing.avi   mp4   map3 jpeg png ...
+		//  2G ...  
+		//43255 没有使用缓冲流的情况下。
+		Long startTime = System.currentTimeMillis();
+		//FileReader fr = new FileReader("数组.xlsx");
+		//FileWriter fw = new FileWriter("sb.xlsx");
+		FileInputStream fr = new FileInputStream("E:/极客营/day01/HD.mp4");
+		FileOutputStream fw = new FileOutputStream("c:/canglaoshi.mp4");
+		int i = 0;
+		byte [] c = new byte [1024];
+		while((i=fr.read(c))!=-1){
+			fw.write(c, 0, i);
+		}
+		fw.close();
+		fr.close();
+		Long time = System.currentTimeMillis()-startTime;
+		System.out.println(time);
+	}
+
+}

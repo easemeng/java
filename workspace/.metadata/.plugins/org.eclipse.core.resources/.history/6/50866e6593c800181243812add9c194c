@@ -1,0 +1,71 @@
+package com.igeek.day02.array;
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+		//数组的声明方式：
+		//方式1：数组中的数据类型 [] 数组名称;（推荐方式）
+		//方式2：数组中的数据类型 数组名称 [];（不推荐）
+		
+		int arrays1[];
+		//arrays1[0] = 1;
+		//数组的赋值方式 。 1
+		int [] arrays = new int [5];  //5 表示数组的长度 。 数组中元素的个数 。 
+		arrays[0] = 19;
+		arrays[1] = 97;
+		arrays[2] = 03;
+		arrays[3] = 03;
+		arrays[4] = 520;
+		//arrays[5] = 1314;  ArrayIndexOutOfBoundsException  超过数组的下标会产生异常
+		
+		//静态创建方式 。 静态初始化方式 。 
+		String [] strs = {"ASD","FGH","JKL"};
+		
+		String [] strs1 = new String[3];
+		strs1[0] = "123";
+		strs1[1] = "123";
+		strs1[2] = "123";
+		
+		//获取数组中的单一数据 。 通过 		数组名称[下标志]		来获取指定元素 。 
+		System.out.println(strs1[2]);
+		
+		//如何获得数组的长度   数组名称.length		如何获得字符串长度 。 字符串名称.length();	带小括号的就是方法。 
+		System.out.println(strs.length);
+		
+		
+		
+		
+		
+		
+		//数组的声明方式：
+		//方式1：数组中的数据类型 [] 数组名称;（推荐方式）
+		//方式2：数组中的数据类型 数组名称 [];（不推荐）
+		
+		int arrays3[];
+		//arrays1[0] = 1;
+		//数组的赋值方式 。 1
+		int [] arrays2 = new int [5];  //5 表示数组的长度 。 数组中元素的个数 。 
+		arrays2[0] = 19;
+		arrays2[1] = 97;
+		arrays2[2] = 03;
+		arrays2[3] = 03;
+		arrays2[4] = 520;
+		//arrays[5] = 1314;  ArrayIndexOutOfBoundsException  超过数组的下标会产生异常
+		
+		//静态创建方式 。 静态初始化方式 。 
+		String [] strs = {"ASD","FGH","JKL"};
+		
+		String [] strs1 = new String[3];
+		strs1[0] = "123";
+		strs1[1] = "123";
+		strs1[2] = "123";
+		
+		//获取数组中的单一数据 。 通过 		数组名称[下标志]		来获取指定元素 。 
+		System.out.println(strs1[2]);
+		
+		//如何获得数组的长度   数组名称.length		如何获得字符串长度 。 字符串名称.length();	带小括号的就是方法。 
+		System.out.println(strs.length);
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.igeek_02_dbcp.DpcpDome_02&apos; to &apos;DbcpDome_02&apos;&#x0D;&#x0A;- Original project: &apos;jdbc_08_pool&apos;&#x0D;&#x0A;- Original element: &apos;com.igeek_02_dbcp.DpcpDome_02&apos;&#x0D;&#x0A;- Renamed element: &apos;com.igeek_02_dbcp.DbcpDome_02&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DpcpDome_02&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.igeek_02_dbcp{DpcpDome_02.java[DpcpDome_02" matchStrategy="1" name="DbcpDome_02" qualified="false" references="true" similarDeclarations="false" stamp="1539347932011" textual="false" version="1.0"/>
+</session>

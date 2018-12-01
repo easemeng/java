@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js" charset="UTF-8"></script>
+	<script>
+		$(function(){
+		$(".b1").click(function(){
+			$("#img1").attr("src","img/2.jpg")+ (new Date.getTime())
+		})
+		})
+	</script>
+	<body>
+		
+		<div class="col-sm-2" id="code1">
+							<img id="img1" alt="验证码丢了 请刷新页面" src="img/1.jpg">
+						</div>
+		<h6 class="b1">点击</h6>
+						
+	</body>
+</html>

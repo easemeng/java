@@ -1,0 +1,25 @@
+HTTP 协议是无状态的	服务器无法知道请求是由哪个浏览器发出的
+	会话跟踪技术 (cookie,session) 会话
+	session 是基于 cookie...
+	(session 对象..)
+Cookie(曲奇,点心)
+	服务器发送给浏览器的一个小数据   数据格式	name:value	名值对儿
+
+Cookie的存储形式有两种
+	1. 存储在内存中
+		没有设置setMaxAge()方法的时候
+	2. 本地文件中 persistent cookie	持久化的 cookie
+		当你设置了 setMaxAge(36)	当前cookie 36s后自动清除
+		
+Cookie的运行原理
+	浏览器第一访问服务器的时候 如果服务器设置了cookie
+	服务器通过...response.addCookie(cookie对象) 向浏览器发送cookie数据
+	(浏览器将数据存储的位置，根据服务器响应时，是否设置setMaxAge()有关)
+	以后每次再发送请求，都会在请求的报文中(request对象)中放入cookie信息
+	服务器可以接收到 请求头中的cookie数据
+	
+// cookie是服务器发送给浏览器的数据
+// Cookie c1 = new Cookies("Username","tom123"); // 中文需要编码
+// Cookie c2 = new Cookies("age","12");
+// 服务器如何发送cookies给浏览器?
+// response.addCookie(c1); // 请求响应完毕	cookie的创建工作是由服务器完成的

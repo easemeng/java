@@ -1,0 +1,24 @@
+package com.igeek.day04.oop;
+/**
+ * 
+ * 值传递，传�?�的是�?�本�? �?
+ * 引用传�?�，传�?�的是对象的内存地址 �?
+ * 
+ * 只有值传�? ，传递的都是对象的副�? �?
+ */
+public class ArgumentsDemo1 {
+
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;//�?部变量在栈中�?
+		change(a,b);
+	}
+	
+	public static void change(int a , int b){
+		a = 100;
+		b = 200;
+		System.out.println(a);
+		System.out.println(b);
+	}
+
+}

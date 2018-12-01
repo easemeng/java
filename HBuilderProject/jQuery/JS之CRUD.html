@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	思路：
+        		1. body 添加用户名密码输入文本框 以及添加按钮 添加按钮绑定 JS 方法
+        		2. 写 JS  
+        			1) 获取输入的值
+        			2) 创建新的用户名密码文本框 并将获取的值放入    添加disable属性
+        			3) 创建新的按钮 查看(弹窗显示用户名密码) 修改(去掉disable属性) 删除
+        					-- 鼠标点击触发事件
+        -->
+		<script type="text/javascript">
+			function on(){
+				// 获得指定元素
+				// 获取输入的 用户名
+				var usn = document.getElementById("username").value;
+				// 获取输入的 密码
+				var pwd = document.getElementById("password").value;
+				// 获取表格
+				var td = document.getElementById("td");
+				
+			//	td.appendChild();
+				// 创建需要添加的元素  tr 行
+				var tr = document.createElement("tr");
+				// 创建信息的td
+				var tdInfo = document.createElement("td");
+				// 创建用来显示的用户名
+				var inputusn = document.createElement("input");
+				inputusn.setAttribute("type","text");
+				inputusn.setAttribute("value",usn);
+				inputusn.setAttribute("disabled",true);
+				// 创建用来显示的 密码
+				var showusn = document.createTextNode("用户名：");
+				var showpwd = document.createTextNode("密码：");
+				
+				var inputpwd = document.createElement("input");
+				inputpwd.setAttribute("type","password");
+				inputpwd.setAttribute("value",pwd);
+				inputpwd.setAttribute("disabled",true);
+				// 向tdInfo中添加数据
+				tdInfo.appendChild(showusn);
+				tdInfo.appendChild(inputusn);
+				tdInfo.appendChild(showpwd);
+				tdInfo.appendChild(inputpwd);
+				tr.appendChild(tdInfo);
+			//	td.appendChild(tr);
+				// 创建按钮组
+				var tdBtn = document.createElement("td");
+				// 添加查看按钮（selectButton，弹窗显示账号密码）
+				var selectButton = document.createElement("button");
+				var selectButtonText = document.createTextNode("查看");
+				selectButton.setAttribute("onclick","sel(this)");
+				selectButton.appendChild(selectButtonText);
+				tdBtn.appendChild(selectButton);
+				// 点击删除整行 添加提示框效果 confirm
+				var deleteButton = document.createElement("button");
+				var deleteButtonText = document.createTextNode("删除");
+				deleteButton.setAttribute("onclick","del(this)")
+				deleteButton.appendChild(deleteButtonText);
+				tdBtn.appendChild(deleteButton);
+				// 点击修改按钮 可以使当前行表单变为可用状态
+				var updateButton = document.createElement("button");
+				var updateButtonText = document.createTextNode("修改");
+				updateButton.setAttribute("onclick","upd(this)");
+				updateButton.appendChild(updateButtonText);
+				tdBtn.appendChild(updateButton);
+				
+				// 点击确定按钮 使修改后信息变为禁用
+				var confirmButton = document.createElement("button");
+				var confirmButtonText = document.createTextNode("确认");
+				confirmButton.setAttribute("onclick","con(this)");
+				confirmButton.setAttribute("hidden",true);
+				confirmButton.appendChild(confirmButtonText);
+				tdBtn.appendChild(confirmButton);
+				
+				tr.appendChild(tdBtn);
+				td.appendChild(tr);
+			}
+			
+			function sel(obj){
+			//	alert("查看")
+			//	alert(obj.parentNode.previousSibling.childNodes)
+				var childs = obj.parentNode.previousSibling.childNodes;
+				alert("用户名是：" + childs[1].value + "\n" + "密码是：" + childs[3].value);
+			//	alert(childs.length)
+			}
+			
+			function del(obj){
+			//	alert("删除")
+				var confirmBtn = confirm("请确认删除");
+				if(confirmBtn){
+					var td = document.getElementById("td");
+					td.removeChild(obj.parentNode.parentNode);
+				}
+			}
+			
+			function upd(obj){
+			//	alert("更新")
+			// parentNode 父节点	previousSibling 上一个兄弟节点		childNodes 所有的子节点的集合
+				var childs = obj.parentNode.previousSibling.childNodes;
+				childs[1].disabled = false;
+				childs[3].disabled = false;
+				var c = obj.parentNode.childNodes;
+				c[3].hidden = false;
+				
+			}
+			
+			function con(obj){
+				var childs = obj.parentNode.previousSibling.childNodes;
+				childs[1].disabled = true;
+				childs[3].disabled = true;
+				obj.hidden = true;
+			//	obj.setAttribute("hidden",true)
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="username" id="username" value="" />
+		<input type="password" name="password" id="password" value="" />
+		<input type="button" value="添加" onclick="on()" />
+		<hr />
+		<table id="td" border="0">
+			
+		</table>
+	</body>
+</html>

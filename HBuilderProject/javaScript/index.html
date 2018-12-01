@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+		<!--
+        	onclick		表示事件的名称 单击时触发
+        	ondblclick	双击时触发
+        	onsubmit	当表单提交时触发 一般写在form表单中
+        	onmouseover	当鼠标移动过来时触发
+        	....  常用的事件 用来触发JS
+        -->
+		
+		<button onclick="an(),bn()">点击</button>
+		<br />
+		<button onclick="cn(10,'哈哈哈',this,500	)">再点击</button>
+		<br />
+		<button onclick="dn('sdf')">继续点击</button>
+		
+		<script type="text/javascript">
+			
+			// Java中没有全局变量的概念  我们都叫做 成员变量			全局变量
+			var text1 = "this is 全局变量";
+			
+			function an(){
+				
+				// var i = 10;
+				i = 10;
+				// alert(i++);
+				alert("an方法" + i);
+				alert(text1)
+				
+			}
+			
+			function bn(){
+				
+				var text2 = "this is 局部变量";
+				alert("bn方法" + text1)
+				alert(i);
+				
+			}
+			
+			// 形式参数
+			function cn(x,y,z){
+				
+				alert(x + "*" + y + "*" + z);
+				// 此时 z 就表示传递过来的标签对象
+				// 对象里面封装了		属性跟方法
+				var zz = z.innerHTML; 	// .innerHTML 属性的意思  是表示当前标签对象内部的内容
+				alert(zz);
+				alert(text1);
+				
+			}
+			
+			function dn(x){
+				
+				// alert("asd" + x);
+				
+				// JS中的数据类型
+				
+				// String类型		字符串
+				// number类型	数字   整数 小数 正数 负数
+				// undefined		未定义的类型
+				// null				空的
+				// boolean			布尔类型
+				
+				// 对象类型		数组		HTML对象
+				var str1 = "去玩玩儿体育UI欧派";
+				var str2 = "爱上对方过后就哭了";
+				
+				var i1 = 10;
+				var i2 = 3.14159265948;
+				var i3 = -3.14159265948;
+				
+				var u1;	// undefined
+				
+				var n1 = null;	// null 是 object 的一种
+				
+				var b1 = true;
+				var b2 = false;
+				
+				// int [] arrs = new int[10];
+				
+				var a1 = new Array();		// Object 类型		注意 null	属于 Object 类型
+				a1[0] = '主线程VB匿名';
+				a1[1] = '去玩儿童与欧普';
+				a1[2] = '123456';
+				
+				alert(typeof(str2));
+				alert(typeof(i3));
+				alert(typeof(i2));
+				alert(typeof(i1));
+				alert(typeof(a1[0]));
+				for(var i = 0;i < a1.length;i++){
+					alert(a1[i]);
+				}
+				
+				var xx = '得出';
+				
+			}
+			
+		</script>
+	</body>
+</html>

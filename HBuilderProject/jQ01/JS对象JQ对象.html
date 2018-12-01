@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS(DOM)对象与jQuery对象的区别</title>
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js" charset="UTF-8" ></script>
+		<script type="text/javascript">
+			$(function(){
+				// 绑定事件	"选择器"
+				$("#btn1").click(function(){
+					// 给按钮绑定一个鼠标单击事件
+					// DOM 对象		jQuery 对象			DOM对象与jQuery对象可以互相转换
+					// DOM 对象只能调用JS中有的属性和方法
+					// jQuery 对象只能调用jQuery中有的属性和方法
+					var $p = $("#p1");
+					// .html() 方法 就相当于 JavaScript 中的 对象.innerHTML
+				//	alert($p.html());
+					// .text() 方法 就相当于 JavaScript 中的 对象.innerText
+				//	alert($p.text());
+				//	alert($p.val());  	// value 	并不是所有标签都能设置value的值
+					$("#d1").attr("src","img/2.jpg")// 设置自定义属性的值	setAttribute	getAttribute
+					alert($("#p1").attr("value"))
+					// $p		在 jQuery 对象前加一个 $ 表示当前对象是一个 jQuery 对象
+					
+					// jQuery 对象 如何转换成 JavaScript (DOM) 对象
+					// 1. $("#p1")[0]
+					// 2. $("#p1").get(0)
+				})
+			})
+			
+			$(function(){
+				var btn2 = document.getElementById("btn2");
+				// btn2   是 DOM对象 还是 jQuery 对象
+				// alert(btn2.text());
+				// 如何将DOM对象转换成jQuery对象
+				var $btn = $(btn2);
+				//alert($btn.text());
+			})
+		</script>
+	</head>
+	<body>
+		<p id="p1" value = "我是value属性"><font color="aqua">******</font></p>
+		<p id="p2">爱上对方过后就哭了</p>
+		<div id="d1">
+			<img src="img/1.jpg"/>
+		</div>
+		
+		<button id = "btn1">点击</button>
+		<button id = "btn2">再点</button>
+	</body>
+</html>

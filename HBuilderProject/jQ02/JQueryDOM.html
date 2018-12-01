@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+		<script>
+			$(function (){
+				$("input[type='button']").click(function(){
+					// 什么是Jquery对象 ，什么是JS对象 。
+					// 通过Jquery选择器 $("选择器") 拿到的一定是jqeury对象
+					var username = $("#username").val();		// val方法返回一个字符串。
+					var password = $("#password").val();
+					var tb = $("#tb");
+					// 选择器  DOM操作 。 Ajax...  json
+					tb.append("<tr><td>用户名:<input type='text' value='" + username + "' disabled/>密码:<input type='password' value='" + password + "' disabled/></td><td><button onclick='sel(this)'>查看</button><button onclick='upd(this)'>修改</button><button onclick='del(this)'>删除</button><button onclick='con(this)'>确认</button></td></tr>");
+				});
+			});
+			
+			function sel(obj){
+			//	alert("查看")
+			//	alert(obj.parentNode.previousSibling.childNodes)
+				var childs = obj.parentNode.previousSibling.childNodes;
+				alert("用户名是：" + childs[1].value + "\n" + "密码是：" + childs[3].value);
+			//	alert(childs.length)
+			}
+			
+			function del(obj){
+			//	alert("删除")
+				var confirmBtn = confirm("请确认删除");
+				if(confirmBtn){
+					var td = document.getElementById("td");
+					td.removeChild(obj.parentNode.parentNode);
+				}
+			}
+			
+			function upd(obj){
+			//	alert("更新")
+			// parentNode 父节点	previousSibling 上一个兄弟节点		childNodes 所有的子节点的集合
+				var childs = obj.parentNode.previousSibling.childNodes;
+				childs[1].disabled = false;
+				childs[3].disabled = false;
+				var c = obj.parentNode.childNodes;
+				c[3].hidden = false;
+				
+			}
+			
+			function con(obj){
+				var childs = obj.parentNode.previousSibling.childNodes;
+				childs[1].disabled = true;
+				childs[3].disabled = true;
+				obj.hidden = true;
+			//	obj.setAttribute("hidden",true)
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="username" id="username" value="" />
+		<input type="password" name="password" id="password" value="" />
+		<input type="button" value="添加" />
+		<hr />
+		<table id="td" border="0">
+			
+		</table>
+	</body>
+</html>

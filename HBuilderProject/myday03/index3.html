@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				/* 清除body 跟浏览器边框的距离 */
+				margin-left: 0px;
+				margin-top: 0px;
+			}
+			.box1{
+				width: 500px;
+				height: 500px;
+				border: 20px red solid;
+				margin-left: 100px;
+			}
+			.box2{
+				width: 50px;
+				height: 50px;
+				background-color: blueviolet;
+				/*
+				 * 10 20 30 40 依次对应 上边框 右边框 下边框 左边框 （顺时针）
+				 * 10 20 30 依次对应 上边框 左右边框 下边框
+				 * 10 20 依次对应 上下边框 左右边框
+				 * 10 依次对应 上下左右 边框
+				 */
+				border-top: dashed;
+				border-color: aqua;
+				border-top-width: 2px;
+				padding-top: 30px;
+				/*border: dashed;   <--  左边这串代码 必须放在边框颜色设置的前面 否则不会使用设置好的颜色
+				border-style: dashed;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			
+		</div>
+		<div class="box2">
+				
+		</div>
+	</body>
+</html>

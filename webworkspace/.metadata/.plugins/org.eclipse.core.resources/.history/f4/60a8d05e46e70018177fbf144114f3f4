@@ -1,0 +1,8 @@
+package com.igeek.enumtest;
+
+public class EnumTest1 {
+
+	private String sex;
+	private String sexdesc;
+	
+}

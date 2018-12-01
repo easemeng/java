@@ -1,0 +1,17 @@
+package com.igeek.enumtest;
+
+import org.junit.Test;
+
+public class TestMain {
+	
+	@Test
+	public void test1(){
+		
+		PersonSex man = PersonSex.MAN;
+		System.out.println(man);
+		man.behavior();
+		System.out.println(man.getSex());
+		
+	}
+
+}

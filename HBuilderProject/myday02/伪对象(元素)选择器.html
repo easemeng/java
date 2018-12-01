@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伪对象选择器</title>
+		<style type="text/css">
+			p::first-letter{
+				color: red;
+			}
+			
+			/* content 内容   context 环境（上下文） */
+			p::before{
+				content: "眉间雪";
+				color: #8A2BE2;
+			}
+			p::after{
+				content: "曾经相伴相护，看过月升日暮";
+			}
+			p::first-line{
+				color: #00FFFF;
+				font-size: 24px;
+			}
+			p::selection{
+				color: beige;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>是不是每种感情都不容沉溺放肆，相交淡如君子。<br /></p>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+package com.igeek.day05.book;
+
+import java.util.Scanner;
+
+public class BookTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		
+		int i =Integer.parseInt(str); 
+		
+		double d = Double.parseDouble(str);
+		
+		// 先把字符串  准换成字符数组 。
+		char [] c = str.toCharArray();
+		
+		
+		
+		
+		Scanner sc2 = new Scanner(System.in);
+		String str2 = sc2.nextLine();
+		
+		int i2 =Integer.parseInt(str2); 
+		
+		double d2 = Double.parseDouble(str2);
+		
+		char [] c2 = str2.toCharArray();
+	}
+
+}

@@ -1,0 +1,161 @@
+package com.igeek.day03.ex;
+
+import java.util.Stack;
+
+public class Test3 {
+
+	public static void main(String[] args) {
+		int a = 10;
+		int b = 20;
+		a = b - a;
+		b = b - a;
+		a = b + a;
+		System.out.println(a);
+		System.out.println(b);
+
+		// 栈 。 CVS
+		Stack<Integer> stack = new Stack<Integer>();
+		int x = 10;
+		int y = 20;
+		stack.push(x);
+		stack.push(y);
+		x = (int) stack.pop();
+		y = (int) stack.pop();
+		System.out.println(x);
+		System.out.println(y);
+
+		int a1 = 10;
+		int a2 = 20;
+
+		int temp = a1;
+		a1 = a2;
+		a2 = temp;
+		// 交换变量。
+				
+				
+				
+
+				
+		int a3 = 10;
+		int b2 = 20;
+		a3 = b2 - a3;
+		b2 = b2 - a3;
+		a3 = b2 + a3;
+		System.out.println(a3);
+		System.out.println(b2);
+
+		// 栈 。 CVS
+		Stack<Integer> stack2 = new Stack<Integer>();
+		int x2 = 10;
+		int y2 = 20;
+		stack2.push(x2);
+		stack2.push(y2);
+		x = (int) stack2.pop();
+		y = (int) stack2.pop();
+		System.out.println(x2);
+		System.out.println(y2);
+
+		int a4 = 10;
+		int a5 = 20;
+
+		int temp2 = a4;
+		a4 = a5;
+		a5 = temp2;
+		// 交换变量。
+		
+		
+		
+		
+		int a11 = 10;
+		int b11 = 20;
+		a11 = b11 - a11;
+		b11 = b11 - a11;
+		a11 = b11 + a11;
+		System.out.println(a11);
+		System.out.println(b11);
+
+		// 栈 。 CVS
+		Stack<Integer> stack11 = new Stack<Integer>();
+		int x11 = 10;
+		int y11 = 20;
+		stack.push(x11);
+		stack.push(y11);
+		x = (int) stack11.pop();
+		y = (int) stack11.pop();
+		System.out.println(x11);
+		System.out.println(y11);
+
+		int a12 = 10;
+		int a13 = 20;
+
+		int temp11 = a12;
+		a12 = a13;
+		a13 = temp;
+		// 交换变量。
+			
+		
+			
+			
+		
+		
+		int a = 10;
+		int b = 20;
+		a = b - a;
+		b = b - a;
+		a = b + a;
+		System.out.println(a);
+		System.out.println(b);
+
+		// 栈 。 CVS
+		Stack<Integer> stack = new Stack<Integer>();
+		int x = 10;
+		int y = 20;
+		stack.push(x);
+		stack.push(y);
+		x = (int) stack.pop();
+		y = (int) stack.pop();
+		System.out.println(x);
+		System.out.println(y);
+
+		int a1 = 10;
+		int a2 = 20;
+
+		int temp = a1;
+		a1 = a2;
+		a2 = temp;
+		// 交换变量。
+		
+		
+		
+		
+		
+		int a = 10;
+		int b = 20;
+		a = b - a;
+		b = b - a;
+		a = b + a;
+		System.out.println(a);
+		System.out.println(b);
+
+		// 栈 。 CVS
+		Stack<Integer> stack = new Stack<Integer>();
+		int x = 10;
+		int y = 20;
+		stack.push(x);
+		stack.push(y);
+		x = (int) stack.pop();
+		y = (int) stack.pop();
+		System.out.println(x);
+		System.out.println(y);
+
+		int a1 = 10;
+		int a2 = 20;
+
+		int temp = a1;
+		a1 = a2;
+		a2 = temp;
+		// 交换变量。
+	}
+	
+	
+}

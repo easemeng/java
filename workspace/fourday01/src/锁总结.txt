@@ -1,0 +1,27 @@
+java 中多线程锁的使用
+	1.1	synchronized 代码块 。 
+		语法：
+			synchronized(任意对象都可以当锁){
+					// 可能产生线程安全问题的代码
+			}
+			当多个同步代码块使用同一个锁对象的时候 ， 依然可以起到同步效果
+			if(){
+					synchronized(obj){
+					
+					}
+			}else{
+					get();
+					synchronized(this){
+							// 下面这个同步代码块的锁 要跟上面代码的锁 一致 。 不然还会出现线程安全问题
+					}
+			}
+	1.2  同步方法 。  synchronized 修饰方法 。
+			1.2.1  静态同步方法	(锁对象不再是this，而是这个类所对应的字节码文件 。 ) Ticket.class
+						public static synchronized void method(){
+								// 一般是指   代码都被synchronized包裹。
+						}
+						// 注意： .java 经过编译之后的 .class 文件  我们称为字节码文件 。 
+			1.2.2 非静态同步方法	(锁对象使用的是 this 关键字。。。)
+						public synchronized void method(){
+								// 一般是指   代码都被synchronized包裹。
+						}

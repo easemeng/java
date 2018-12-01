@@ -1,0 +1,11 @@
+package com.igeek.singleton;
+
+public class Singleton3 {
+	
+	private Singleton3() {};
+	
+	private static class SingletonInstance {
+        private static final Singleton3 SINGLETON = new Singleton3();
+    }
+
+}

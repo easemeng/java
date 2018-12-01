@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS选择器</title>
+		<style type="text/css">
+			.ul1>li{
+				color: yellow;
+				font-size: 18px;
+			}
+			.test a{
+				color: #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+        	1.行内样式		内联样式
+        	2.内部样式		<style></style>
+        	3.外部样式		.css文件   <link ... href="">
+        		
+        	选择器：用来找到元素
+        	id选择器			#id值
+        	class选择器		.class值
+        	element选择器 	直接写标签名称	p	
+        	* 表示找到所有标签
+        	空格 E F 表示找到 E中的所有F后代元素（包括直接子元素和间接子元素）
+        	> 表示找到所有的直接子元素
+        	+ 表示紧跟着的意思
+        	~ 波浪线	E~F	选择E元素后面的所有兄弟元素F	（*后面* 很关键）
+        -->
+        
+        <ul class="ul1">
+        	<li>水果
+        		<ol id="fruit">
+        			<li>提子</li>
+        			<li>芒果</li>
+        			<li>火龙果</li>
+        		</ol>
+        	</li>
+        	<li>小说
+        		<ol>
+        			<li>斗破苍穹</li>
+        			<li>武动乾坤</li>
+        			<li>斗罗大陆</li>
+        		</ol>
+        	</li>
+        	<li>游戏
+        		<ol>
+        			<li>英雄联盟</li>
+        			<li>天涯明月刀</li>
+        			<li>魔兽世界</li>
+        		</ol>
+        	</li>
+        </ul>
+        
+        <p>
+        	<p>天上白玉京</p>
+        	<p>十二楼五城</p>
+        </p>
+        <p>
+        	<p>仙人抚我顶</p>
+        	<p>结发授长生</p>
+        </p>
+        
+        <ul class="test">
+        	<li>
+        		<a href="?">列表项目1</a>
+        		<ul>
+        			<li>
+        				<a href="?">列表项目1.1</a>
+        			</li>
+        			<li>
+        				<a href="?">列表项目1.2</a>
+        			</li>
+        		</ul>
+        	</li>
+        	<li>
+        		<a href="?">列表项目2</a>
+        		<ul>
+        			<li>
+        				<a href="?">列表项目2.1</a>
+        			</li>
+        			<li>
+        				<a href="?">列表项目2.2</a>
+        			</li>
+        		</ul>
+        	</li>
+        	<li>
+        		<a href="?">列表项目</a>
+        	</li>
+        	<li>
+        		<a href="?">列表项目</a>
+        	</li>
+        </ul>
+	</body>
+</html>

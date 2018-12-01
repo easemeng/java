@@ -1,0 +1,15 @@
+package com.igeek.singleton;
+
+public class Singleton3 {
+	
+	private Singleton3() {};
+	
+	private static class Singleton4 {
+        private static final Singleton3 SINGLETON = new Singleton3();
+    }
+	
+	public static Singleton3 getSingleton() {
+		
+	}
+
+}

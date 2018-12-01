@@ -1,0 +1,21 @@
+package com.igeek.day07.innerclass;
+
+import com.igeek.day07.xiushifu.Test1;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		// 对象的创建方式 。 
+		// 1. 类名	对象名称	=	new 构造器();
+		// 2. 匿名对象		new 构造器();
+		// 3. 全路径.类名	对象名称	=	new 全路径.类名();
+		// 4. 通过Java反射		5. spring ioc...
+		
+		// 当多个包下面出现同名类的时候，如果选择引包，默认创建出来的所有对象，都属于你引包下的那个类。
+		
+		com.igeek.day07.abstract1.Test01 test1 = new com.igeek.abstract1.Test01();
+		com.igeek.oop2.Test1 test2 = new com.igeek.oop2.Test1();
+		Test1 test3 = new Test1();
+	}
+
+}

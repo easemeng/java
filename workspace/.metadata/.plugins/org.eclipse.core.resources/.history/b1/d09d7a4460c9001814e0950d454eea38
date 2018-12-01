@@ -1,0 +1,19 @@
+package com.igeek.day05.book;
+
+import java.util.Scanner;
+
+public class BookTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		
+		int i =Integer.parseInt(str); 
+		
+		double d = Double.parseDouble(str);
+		
+		// 先把字符串  准换成字符数组 。
+		char [] c = str.toCharArray();
+	}
+
+}

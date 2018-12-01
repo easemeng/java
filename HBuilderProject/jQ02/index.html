@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 13px;
+				line-height: 130%;
+				padding: 60px;
+			}
+			
+			#content{
+				width: 220px;
+				border: 1px solid blueviolet;
+				background: aqua;
+			}
+			
+			span {
+				width: 200px;
+				margin: 10px;
+				background: blue;
+				cursor: pointer;
+				color: white;
+				display: block;
+			}
+			
+			p {
+				width: 200px;
+				background: darkmagenta;
+				color: white;
+				height: 16px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+		
+		<script>
+			$(function(){
+			//	$("button").click(function(){...})		第一种绑定事件的方式
+			// 选择器.事件名称(function(){事件要完成的方法})
+				$("body").click(function(){
+					alert("body click");
+					return false;
+				});
+				
+				$("#content").click(function(){
+					alert("div click");
+				});
+				
+				$("span").click(function(event){
+					// function 中名称可以随意   代指的其实就是event事件
+					// event.stopPropagation();
+					// 1.   .stopPropagation();
+					// 2.   return false;  	// 解决事件冒泡的两种方法
+					alert("span...");
+					return false;
+				})
+			})
+			
+			$(function(){
+				$("a").click(function(){
+					//event.stopPropagation();
+					//alert($(this).text());
+					//alert(event.text());
+					//this 是一个js对象  this意思代表当前对象本身。
+					//alert(this.target);
+					//alert(this.text());
+					//return false;
+					//阻止默认行为 。
+					//event.preventDefault();
+					//阻止默认行为的两种方式  。
+					//1. preventDefault(); 去阻止默认行为 。
+					//2. return false。
+					
+					//attr()  操作属性 。
+					//css() 添加样式 。
+					
+					return false;
+				})
+			})
+		</script>
+		
+	</head>
+	<body>
+		<div id="content">
+			外层div元素
+			<span>内部span元素</span>外层div元素
+		</div>
+		
+		<div id="log"></div>
+		<div id="log2"></div>
+		<div id="msg"></div>
+		
+		<br /><br />
+		<a href="http://hao123.com">www.hao123.com</a>
+	</body>
+</html>

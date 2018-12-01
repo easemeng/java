@@ -1,0 +1,5 @@
+package com.igeek.enumtest;
+
+public interface Person {
+
+}

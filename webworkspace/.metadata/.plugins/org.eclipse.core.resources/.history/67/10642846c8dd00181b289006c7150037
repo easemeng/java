@@ -1,0 +1,60 @@
+package com.igeek.shop.web.product;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.igeek.shop.service.product.ProductService;
+import com.igeek.shop.service.product.ProductServiceImpl;
+import com.igeek.common.utils.StringUtils;
+import com.igeek.shop.entity.*;
+
+public class ProductServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	private ProductService pros = new ProductServiceImpl();
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String state = request.getParameter("state");
+		if(state.equals("getProductList")){
+			this.getProductList(request,response);
+		}else if(state.equals("delete")){
+			this.delete(request,response);
+		}else if(state.equals("addProduct")){
+			this.addProduct(request,response);
+		}
+		
+	}
+
+	private void addProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+		pros.addProduct();
+		getProductList(request,response);
+		
+	}
+
+	private void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String pid = request.getParameter("pid");
+		System.out.println(pid);
+		pros.delete(pid);
+		getProductList(request,response);
+		
+	}
+
+	protected void getProductList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<Product> productList = pros.getProductList();
+		request.setAttribute("productList", productList);
+		request.getRequestDispatcher("/admin/product/list.jsp").forward(request, response);
+		
+	}
+
+}

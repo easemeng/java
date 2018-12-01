@@ -1,0 +1,207 @@
+package com.igeek.shop.web;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
+import com.igeek.shop.entity.Category;
+import com.igeek.shop.entity.PageBean;
+import com.igeek.shop.entity.Product;
+import com.igeek.shop.service.ProductRelateService;
+import com.igeek.shop.service.ProductRelateServiceImpl;
+
+public class ProductRelatedServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	private ProductRelateService service = new ProductRelateServiceImpl();
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		
+		String state = request.getParameter("state");
+		if(state.equals("categoryPage")){
+			this.getCategoryList(request,response);
+		}else if(state.equals("productCgPage")){
+			this.productCgPage(request,response);
+		}else if(state.equals("particulars")){
+			this.productParticulars(request,response);
+		}else if(state.equals("cart")){
+			this.createCart(request,response);
+		}
+		
+	}
+
+	private void createCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String pid = request.getParameter("pid");
+		System.out.println(pid);
+		String quantity = request.getParameter("quantity");
+		int qt = Integer.parseInt(quantity);
+		
+		Product product = service.getOneProduct(pid);
+		double price = product.getShop_price() * quantity;
+		
+		request.setAttribute("product",product );
+		request.setAttribute("quantity",quantity );
+		request.setAttribute("price",price );
+		
+		request.getRequestDispatcher("/cart.jsp").forward(request, response);
+		
+	}
+
+	private void productParticulars(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String pid = request.getParameter("pid");
+		String currentPageNumber = request.getParameter("currentPageNumber");
+		
+		Product product = service.getOneProduct(pid);
+		String cid = product.getCid();
+		Category category = service.getOneCategory(cid);
+		
+		/**
+		 * 写浏览记录 思路
+		 * 	每次点击商品 (每次点击商品都会进入当前方法) 都会记录一个cookie给客户端 该cookie的id为pids
+		 * 	pids应该是一个拼接过程	3-2-1 顺序从右到左
+		 */
+		
+		// 将点击商品详情后前端页面取到的商品id赋值给pids
+		String pids = pid;
+		// 创建一个Cookie数组 接收从请求头中获得的cookie
+		Cookie[] cookies = request.getCookies();
+		// 判断取到的cookie是否为空 是否含有值
+		if(cookies != null && cookies.length > 0){
+			// 遍历不为空的cookie
+			for (Cookie cookie : cookies) {
+				// 判断 cookie中是否含有 名字为 pids 的值 如果有 继续执行
+				if(cookie.getName().equals("pids")){
+					// 取到cookie中 pids对应的value值 
+					pids = cookie.getValue();
+					// 创建一个String数组 接收从cookie中取到的值(去掉中间的-)
+					String[] ids = pids.split("-");
+					// 将取到值的数组转换为集合(注:通过Arrays.asList(String[]) 转化后的集合 不能做修改操作 只能查看)
+					List<String> idsList = Arrays.asList(ids);	// 当前数组不能做修改操作
+					// 将集合转换为LinkedList集合(可添加泛型为String)
+					LinkedList<String> idsList2 = new LinkedList<String>(idsList);
+					// 判断 拿到的集合中是否含有 当前点击的商品的pid 如果有 先将其移除 然后再添加到集合的第一位
+					if(idsList2.contains(pid)){
+						idsList2.remove(pid);
+					}
+					// 将当前商品的pid添加到集合的第一位
+					idsList2.addFirst(pid);
+					// 构造一个没有字符的字符串缓冲区
+					StringBuffer sbf = new StringBuffer();
+					// 循环遍历集合 查询最大不超过7个数据 将查询到的数据插入到 缓冲区中 还要加入之前去掉的-
+					for(int i = 0; i < idsList2.size() && i < 7; i++){
+						sbf.append(idsList2.get(i));
+						sbf.append("-");
+					}
+					// 返回一个新的字符串 其中包含此序列中当前包含的字符的子序列 (要去掉最后一个多出来的-)
+					String sb = sbf.substring(0,sbf.length() - 1);
+					// 返回此顺序中的数据的字符串
+					pids = sb.toString();
+				}
+			}
+		}
+		// 创建一个新的cookie 将拼接处理后的 pid 放入cookie中
+		Cookie c = new Cookie("pids",pids);
+		// 将cookie添加到响应中
+		response.addCookie(c);
+		
+/*		
+		HttpSession session = request.getSession();
+		LinkedList<String> pidList = (LinkedList<String>) session.getAttribute("historyPidList");
+		
+		if(pidList != null && pidList.size() > 0){
+			if(pidList.contains(pid)){
+				pidList.remove(pid);
+			}
+		}
+		if(pidList == null){
+			pidList = new LinkedList<String>();
+		}
+		pidList.addFirst(pid);
+		session.setAttribute("historyPidList", pidList);
+		*/
+		request.setAttribute("currentPageNumber", currentPageNumber);
+		request.setAttribute("category", category);
+		request.setAttribute("product", product);
+		request.getRequestDispatcher("/product_info.jsp").forward(request, response);
+		
+	}
+
+	private void productCgPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String page = request.getParameter("page");
+		int currentPageNumber = Integer.parseInt(page);
+		String cid = request.getParameter("cid");
+		Category category = service.getOneCategory(cid);
+		request.setAttribute("category", category);
+		long totalPageDataNumber = service.getProductNumberByCid(cid);
+		PageBean pageBean = service.getPageBeanByCategory(currentPageNumber,12,totalPageDataNumber,cid);
+	
+		
+		// 创建一个历史记录集合historyList
+		List<Product> historyList = new ArrayList<Product>();
+		// 创建一个Cookie数组 接收请求头中的cookie
+		Cookie[] cookies = request.getCookies();
+		// 判断cookie中是否为空
+		if(cookies != null && cookies.length > 0){
+			// 遍历含有值的cookie
+			for (Cookie cookie : cookies) {
+				// 判断是否有 Name为 pids 的值
+				if(cookie.getName().equals("pids")){
+					// 取到 pids 对应 的value
+					String values = cookie.getValue();
+					// 创建一个String数组 接收从cookie中取到的值(去掉中间的-)
+					String[] pids = values.split("-");
+					// 遍历处理后的pids数组	使用每个查询到的pid查询到商品信息 将查询到的商品对象循环添加到historyList
+					for (String pid : pids) {
+						Product pro = service.getOneProduct(pid);
+						historyList.add(pro);
+					}
+				}
+			}
+		}
+		// 将historyList集合 放入到请求域中 方便前端页面使用 
+		request.setAttribute("historyList", historyList); 
+/*
+		HttpSession session = request.getSession();
+		LinkedList<String> pidList = (LinkedList<String>) session.getAttribute("historyPidList");
+		List<Product> historyList = new ArrayList<Product>();
+		if(pidList != null){
+			for (String pid : pidList) {
+				Product pro = service.getOneProduct(pid);
+				historyList.add(pro);
+			}
+		}
+		request.setAttribute("historyList", historyList); 
+		
+	*/	request.setAttribute("pageBean", pageBean);
+		request.getRequestDispatcher("/product_list.jsp").forward(request, response);
+		
+	}
+
+	protected void getCategoryList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<Category> categoryList = service.findCategoryList();
+		// 需要将categoryList转成json
+		Gson gson = new Gson();
+		// 	.tojson() 方法 转换成json格式
+		String json = gson.toJson(categoryList);
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().write(json);
+		
+	}
+
+}

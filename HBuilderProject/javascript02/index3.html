@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function on(){
+				var person = new Object();
+				person.name = "杰克";
+				person.age = 81;
+				alert(person.name)
+				// 简单的写法
+				var qq = {name:"刘亦菲",age:18};
+				alert(qq.name);
+			}
+			
+			function cn(){
+				// 同样可以完成调用
+				var value = add(10,20,30,40,"ss");		// 有返回值的 就可以拿变量接受
+			//	alert(value);
+			//	var ss = ss();
+				alert(typeof value);	// number
+			}
+			
+			function add(a,b){
+				return a + b;
+			}
+			
+			function ss(){
+				alert("ss")
+			}
+			
+			function test1(){
+			//	var length = 10;
+			//	var name = "唐木";		// JS中声明变量的格式
+			
+			var x,length
+			x = 5;
+			length = 6;
+			alert(x);
+			alert(length);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="test1()">点击</button>
+	</body>
+</html>

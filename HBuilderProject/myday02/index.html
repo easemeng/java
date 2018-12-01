@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.nav{
+				overflow: hidden;
+			}
+			.nav li{
+				float: left;
+				display: block;
+				margin-left: 50px;
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			.clear{
+				display: none;
+			}
+			div{
+				opacity: 0.3;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav">
+			<li><a href="javascript:on(1)">天</a></li>
+			<li><a href="javascript:on(2)">鬼</a></li>
+			<li><a href="javascript:on(3)">流</a></li>
+		</ul>
+		<hr />
+		<div id="show1" style="background-color: red; width: 500px; height: 300px;">天涯</div>
+		<div id="show2" class="clear" style="background-color: blue; width: 500px; height: 300px;">鬼域</div>
+		<div id="show3" class="clear" style="background-color: blueviolet; width: 500px; height: 300px;">流云</div>
+		
+		<img src="img/5.jpg" alt="=.=" />
+		<script type="text/javascript">
+			function on(num){
+				for(var i=1;i<4;i++){
+					var divs = document.getElementById("show"+i);
+					divs.className = "clear";
+				}
+				var div = document.getElementById("show"+num);
+				div.className = "";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,6 @@
+package com.igeek.day06.extends2;
+
+public class Teacher extends Person{
+
+	
+}

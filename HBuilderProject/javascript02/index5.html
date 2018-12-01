@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	 ''  ""
+        	 1.字符串	(String)
+        	 2.数字		(Number)
+        	 3.布尔		(Boolean)
+        	 4.未定义	(Undefined)
+        	 5.对象 (Object)
+        	 		数组 (Array)
+        	 		空		(Null)
+        	 var arrays = [10,55,67,84,99];
+        -->
+        <button onclick="o()">>o<</button>
+        <button onclick="on()">点击</button>
+        
+        <!-- this.innerHTML 修改自身元素的内容 -->
+        <button onclick="this.innerHTML = new Date()">日期</button>
+        <select name="" onchange="on()">
+        	<option value="">芒果</option>
+        	<option value="">火龙果</option>
+        	<option value="">提子</option>
+        	<option value="">蛇果</option>
+        </select>
+        
+        <script>
+        	var a = "***********";	// 全局变量		放入到 window 对象中  作为 window 对象的属性
+        	
+        	function o(){
+        		var arrays = [465,645,687,87,6,6,7];
+        		var a = "ss";
+        		
+        		// 函数中没有被声明的变量 是全局变量 但是
+        		// 只有被调用才会执行	只有执行了才能升级成全局变量
+        		bbb = 12;
+        		
+        		var b;	// Undefined 未定义的
+        	//	alert(typeof arrays);
+        		alert(typeof a);
+        	//	alert(typeof b);
+        	}
+        	// onclick		ondbclick		onblur 失去焦点	onfocus 获得焦点
+        	// onmouseover	onmouseout		onsubmit（当表单提交时	只用在form表单上）
+        	// onchange 当发生改变时		onload	当页面加载完成时
+        </script>
+        
+        <script type="text/javascript">
+        	function on(){
+        		// 在函数外声明的变量是全局变量	网页上的所有脚本和函数都能访问
+        		
+        		// 局部变量会在函数运行以后被删除
+        		
+        		// 全局变量会在页面关闭后被删除
+        		
+        		// alert(bbb);
+        		alert("改变")
+        	}
+        </script>
+	</body>
+</html>

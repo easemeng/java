@@ -1,0 +1,9 @@
+package com.igeek.singleton;
+
+public class Singleton1 {
+	
+	
+	
+	Singleton1 singleton = new Singleton1();
+	
+}

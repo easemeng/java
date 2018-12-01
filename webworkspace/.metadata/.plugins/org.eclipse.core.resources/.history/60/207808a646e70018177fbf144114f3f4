@@ -1,0 +1,23 @@
+package com.igeek.enumtest;
+
+public class EnumTest1 {
+
+	private final String sex;
+	private final String sexdesc;
+	
+	private EnumTest1(String sex,String sexdesc){
+		
+		this.sex = sex;
+		this.sexdesc = sexdesc;
+		
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public String getSexdesc() {
+		return sexdesc;
+	}
+	
+}

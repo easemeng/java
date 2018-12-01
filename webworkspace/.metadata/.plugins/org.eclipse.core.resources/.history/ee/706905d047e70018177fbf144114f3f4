@@ -1,0 +1,10 @@
+package com.igeek.enumtest;
+
+public class TestMain {
+	
+	@Test
+	public void test1(){
+		
+	}
+
+}
