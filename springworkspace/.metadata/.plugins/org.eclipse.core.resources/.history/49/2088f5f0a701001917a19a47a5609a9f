@@ -1,0 +1,23 @@
+package com.igeek.lesson1;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class HelloSpring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// 创建对象的方式
+		// 1. 直接new Person p = new Person();
+		// 2. 匿名对象 new Person();
+		// 3. 全路径 com.igeek.lesson1.Person
+		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		Person p = (Person) ac.getBean("p1");
+		System.out.println(p);
+		
+		Person p2 = (Person) ac.getBean("p1");
+		System.out.println(p2);
+	}
+
+}

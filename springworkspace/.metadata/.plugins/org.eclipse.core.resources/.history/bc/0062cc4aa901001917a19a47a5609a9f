@@ -1,0 +1,32 @@
+package com.igeek.lesson1;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class HelloSpring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// 创建对象的方式
+		// 1. 直接new Person p = new Person();
+		// 2. 匿名对象 new Person();
+		// 3. 全路径 com.igeek.lesson1.Person p = new com.igeek.lesson1.Person();
+		// 4. 反射 Class.forName("com.igeek.lesson1.Person").newInstance();
+		
+		// 通过spring IOC容器来创建对象
+		// 通过spring IOC容器来创建对象
+		
+		// 创建springIOC容器来装对象 管理对象的生命周期
+		
+		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		
+		// 使用java反射来实现 并且默认是单例模式来帮我们创建对象
+//		Person p = (Person) ac.getBean("p1");
+//		System.out.println(p);
+		
+		Person p2 = (Person) ac.getBean(Person.class);
+		System.out.println(p2);
+	}
+
+}

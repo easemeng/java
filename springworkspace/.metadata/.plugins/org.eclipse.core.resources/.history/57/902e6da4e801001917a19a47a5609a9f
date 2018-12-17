@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 配置bean之间的关系
+		res	引用 	指向 -->
+	
+	<bean id="p1" class="com.igeek.lesson4.Person">
+		<property name="name" value="小明"></property>
+		<property name="age" value="18"></property>
+		<property name="pet" ref="pet1"></property>
+	</bean>
+
+	<bean id="pet1" class="com.igeek.lesson4.Pet">
+		<property name="petName" value="小脑斧"></property>
+		<property name="age" value="1"></property>
+	</bean>
+
+	<!-- 配置内部bean -->
+	<bean id="p2" class="com.igeek.lesson4.Person">
+		<property name="name" value="小明"></property>
+		<property name="age" value="18"></property>
+		<property name="pet">
+			<bean class="com.igeek.lesson4.Pet">
+				<property name="petName" value="小脑斧"></property>
+				<property name="age" value="1"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	
+	<!-- <bean id="p3" class="com.igeek.lesson4.Person">
+		<constructor-arg name="name">
+			<null/>
+		</constructor-arg>
+		<constructor-arg name="age" value="18"></constructor-arg>
+	</bean> -->
+</beans>

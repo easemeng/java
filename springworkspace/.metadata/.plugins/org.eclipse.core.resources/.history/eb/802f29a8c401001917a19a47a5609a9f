@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		DI 依赖注入 
+	 -->
+	<bean id="p1" class="com.igeek.lesson3.Person">
+		<constructor-arg value="李四" index="0" ></constructor-arg>
+		<constructor-arg value="18" type="int"></constructor-arg>
+	</bean>
+	<bean id="p2" class="com.igeek.lesson3.Person">
+		<constructor-arg value="王五" index="0" ></constructor-arg>
+		<constructor-arg type="int">
+			<value>13</value>	
+		</constructor-arg>
+	</bean>
+	<bean id="p2" class="com.igeek.lesson3.Person">
+		<constructor-arg index="0" >
+			<value></value>
+		</constructor-arg>
+		<constructor-arg type="int">
+			<value>13</value>	
+		</constructor-arg>
+	</bean>
+</beans>

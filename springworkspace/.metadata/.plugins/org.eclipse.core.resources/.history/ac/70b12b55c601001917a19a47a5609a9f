@@ -1,0 +1,11 @@
+package com.igeek.lesson4;
+
+public class Person {
+	
+	private String name;
+	private int age;
+	// 类的关联关系		关联、继承
+	// Pet pet = new Pet();	耦合
+	private Pet pet; // 高内聚 低耦合
+	
+}

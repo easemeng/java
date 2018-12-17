@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		DI 依赖注入 	1.setter方法		2.构造器注入		3.工厂方法
+		constructor-arg 表示通过构造器 对属性进行赋值
+		
+		value 表示你要注入的属性的值
+		index 表示参数下标
+		type 指定类型		java.lang.String
+		
+		通过scope属性可以执行spring IOC容器 创建对象的类型	
+		prototype 原型模式(多例模式) 每次调用ICO容器的getBean()方法，就会返回一个新的对象()
+	 -->
+	<bean id="p1" class="com.igeek.lesson3.Person">
+		<constructor-arg value="李四" index="0" ></constructor-arg>
+		<constructor-arg value="18" type="int"></constructor-arg>
+	</bean>
+	<bean id="p2" class="com.igeek.lesson3.Person">
+		<constructor-arg value="王五" index="0" ></constructor-arg>
+		<constructor-arg type="int">
+			<value>13</value>	
+		</constructor-arg>
+	</bean>
+	<bean id="p3" class="com.igeek.lesson3.Person">
+		<constructor-arg index="0" >
+			<value><![CDATA[<小马>]]></value>
+		</constructor-arg>
+		<constructor-arg type="int">
+			<value>13</value>	
+		</constructor-arg>
+	</bean>
+</beans>

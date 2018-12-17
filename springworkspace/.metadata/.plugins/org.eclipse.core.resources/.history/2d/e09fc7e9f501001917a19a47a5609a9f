@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<bean id="p1" class="com.igeek.lesson5.Person">
+		<property name="name" value="赵飞燕"></property>
+		<property name="pets">
+			<!-- <ref bean="qs"/>
+			<ref bean="bs"/>
+			<null/>
+			<bean class="com.igeek.lesson4.Pet">
+				<property name="petName" value="九尾狐"></property>
+				<property name="age" value="9999"></property>
+			</bean> -->
+			
+			<ref bean="pets" />
+		</property>
+	</bean>
+	
+	<bean id="p2" class="com.igeek.lesson5.Person">
+		<property name="name" value="李秀宁"></property>
+		<property name="petMap">
+			<map>
+				<entry key="xq" value-ref="qs"></entry>
+				<entry key="sz" value-ref="bs"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="p3" class="com.igeek.lesson5.Person">
+		<property name="name" value="张俪"></property>
+		<property name="pros">
+			<props>
+				<prop key="username">zl</prop>
+				<prop key="password">zl123</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="p4" class="com.igeek.lesson5.Person">
+		<property name="name" value="刘亦菲"></property>
+		<property name="pets">
+			<ref bean="pets" />
+		</property>
+	</bean>
+	
+	<bean id="qs" class="com.igeek.lesson4.Pet">
+		<property name="petName" value="青蛇"></property>
+		<property name="age" value="500"></property>
+	</bean>
+	
+	<bean id="bs" class="com.igeek.lesson4.Pet">
+		
+	</bean>
+</beans>

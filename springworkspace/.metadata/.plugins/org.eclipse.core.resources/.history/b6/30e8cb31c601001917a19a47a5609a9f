@@ -1,0 +1,10 @@
+package com.igeek.lesson4;
+
+// 场景抽象能力
+public class Pet {
+	
+	private String petName;
+	private int age;
+	
+	
+}

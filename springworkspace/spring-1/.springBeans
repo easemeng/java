@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.4.0.201310051539-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/beans.xml</config>
+		<config>src/com/igeek/lesson2/lesson2.xml</config>
+		<config>src/com/igeek/lesson4/beans.xml</config>
+		<config>src/com/igeek/lesson3/beans.xml</config>
+		<config>src/com/igeek/lesson5/beans.xml</config>
+		<config>src/com/igeek/lesson6/beans.xml</config>
+		<config>src/com/igeek/lesson7/beans.xml</config>
+	</configs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

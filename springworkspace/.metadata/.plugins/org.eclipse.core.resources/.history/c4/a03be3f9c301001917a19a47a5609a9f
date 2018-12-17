@@ -1,0 +1,21 @@
+package com.igeek.lesson3;
+
+public class Person {
+
+	private String name;
+	private int age;
+	private double type;
+
+	public Person() {
+
+	}
+
+	public Person(String name, int age) {
+
+	}
+
+	public Person(String name, double type) {
+
+	}
+
+}

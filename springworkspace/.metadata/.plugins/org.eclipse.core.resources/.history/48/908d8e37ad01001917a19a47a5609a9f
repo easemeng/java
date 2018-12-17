@@ -1,0 +1,16 @@
+package com.igeek.lesson1;
+
+public class Person {
+
+/*	private static Person p = new Person();
+	
+	private Person(){
+		
+	}
+	public static Person getPerson(){
+		
+		return p;
+	}*/
+	
+	
+}

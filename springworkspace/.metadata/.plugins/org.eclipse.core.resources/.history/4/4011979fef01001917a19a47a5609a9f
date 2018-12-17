@@ -1,0 +1,53 @@
+package com.igeek.lesson5;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
+import com.igeek.lesson4.Pet;
+
+public class Person {
+	
+	private String name;
+	
+	private List<Pet> pets;
+	
+	private Map<String,Pet> petMap;
+	
+	private Properties pros;
+
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Pet> getPets() {
+		return pets;
+	}
+
+	public void setPets(List<Pet> pets) {
+		this.pets = pets;
+	}
+
+	public Map<String, Pet> getPetMap() {
+		return petMap;
+	}
+
+	public void setPetMap(Map<String, Pet> petMap) {
+		this.petMap = petMap;
+	}
+
+	public Properties getPros() {
+		return pros;
+	}
+
+	public void setPros(Properties pros) {
+		this.pros = pros;
+	}
+	
+}

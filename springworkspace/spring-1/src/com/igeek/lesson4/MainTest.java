@@ -1,0 +1,14 @@
+package com.igeek.lesson4;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext ac = new ClassPathXmlApplicationContext("com/igeek/lesson4/beans.xml");
+		Person p = (Person) ac.getBean("p3");
+		System.out.println(p);
+	}
+}

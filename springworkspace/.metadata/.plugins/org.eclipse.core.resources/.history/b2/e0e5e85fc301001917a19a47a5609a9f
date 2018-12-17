@@ -1,0 +1,13 @@
+package com.igeek.lesson3;
+
+public class MainTest {
+
+	private String name;
+	private int age;
+	private int type;
+	
+	public Person(){
+		
+	}
+
+}

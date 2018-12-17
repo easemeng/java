@@ -1,0 +1,15 @@
+package com.igeek.lesson5;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ApplicationContext ac = new ClassPathXmlApplicationContext();
+		Person p = ac.getBean("p1");
+	}
+
+}

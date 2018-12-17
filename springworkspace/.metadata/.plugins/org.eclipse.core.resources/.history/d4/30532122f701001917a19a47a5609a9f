@@ -1,0 +1,7 @@
+package com.igeek.lesson6;
+
+public class Pet {
+
+	private String petName;
+	private int age;
+}

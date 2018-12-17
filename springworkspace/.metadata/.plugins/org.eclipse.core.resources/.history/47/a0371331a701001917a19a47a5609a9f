@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		
+		bean 就是你的java类 或者java对象 通过java反射来帮你创建对象 
+	-->
+	<bean id="p1" class="com.igeek.lesson1.Person">
+	
+	</bean>
+</beans>
